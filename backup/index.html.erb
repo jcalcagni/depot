@@ -1,0 +1,17 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+ 
+<h1>Verteo Physician Events</h1>
+ 
+<% @events.each do |event| %>
+  <div class="entry">
+    <h3><%= event.title %></h3>
+    <p><%= sanitize(event.location) %></p>
+    <div class="price_line">
+      <span class="price"><%= event.eventdate %></span>
+	  <span class="price"><%= event.eventtime.strftime("%H:%M") %></span>
+	  <%= button_to 'Register', events_path(event_id: event), remote: true %>
+    </div>
+  </div>
+<% end %>

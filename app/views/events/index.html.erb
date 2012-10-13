@@ -1,0 +1,30 @@
+<h1>Listing events</h1>
+
+<table>
+<% @events.each do |event| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+ 
+    <td></td>
+ 
+    <td class="list_description">
+      <dl>
+        <dt><%= event.title %></dt>
+        <dd><%= truncate(strip_tags(event.location),
+               length: 80) %></dd>
+	    <dd><%= event.eventdate %></dd>
+		<dd><%= event.eventtime %></dd>
+      </dl>
+    </td>
+
+
+  <td class="list_actions">
+    <%= link_to 'Show', event %>
+    <%= link_to 'Edit', edit_event_path(event) %>
+    <%= link_to 'Destroy', event, confirm: 'Are you sure?', method: :delete %>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Event', new_event_path %>

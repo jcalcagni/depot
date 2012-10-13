@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Event:</b>
+  <%= @reg_line.event_id %>
+</p>
+
+<p>
+  <b>Holder:</b>
+  <%= @reg_line.holder_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_reg_line_path(@reg_line) %> |
+<%= link_to 'Back', reg_lines_path %>

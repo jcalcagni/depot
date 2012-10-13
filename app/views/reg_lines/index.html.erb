@@ -1,0 +1,25 @@
+<h1>Listing reg_lines</h1>
+
+<table>
+  <tr>
+    <th>Event</th>
+    <th>Holder</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @reg_lines.each do |reg_line| %>
+  <tr>
+    <td><%= reg_line.event_id %></td>
+    <td><%= reg_line.holder_id %></td>
+    <td><%= link_to 'Show', reg_line %></td>
+    <td><%= link_to 'Edit', edit_reg_line_path(reg_line) %></td>
+    <td><%= link_to 'Destroy', reg_line, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Reg line', new_reg_line_path %>

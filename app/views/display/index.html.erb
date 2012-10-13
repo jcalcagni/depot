@@ -1,0 +1,18 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+ 
+<h1>Verteo Biopharma Events</h1>
+ 
+<% @events.each do |event| %>
+  <div class="entry">
+  <%= image_tag(event.image_url) %>
+    <h3><%= event.title %></h3>
+    <p><%= sanitize(event.location) %></p>
+    <div class="price_line">
+      <span class="price"><%= event.eventdate.strftime("%m/%d/%Y") %></span>
+	  <p><%= event.eventtime.strftime("%H:%M") %></p>
+	  <%= button_to 'Register for Event', reg_lines_path(event_id: event) %>
+    </div>
+  </div>
+<% end %>

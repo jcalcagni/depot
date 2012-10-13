@@ -1,0 +1,36 @@
+<%= form_for(@registration) do |f| %>
+  <% if @registration.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@registration.errors.count, "error") %> prohibited this registration from being saved:</h2>
+
+      <ul>
+      <% @registration.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+<!-- START_HIGHLIGHT -->
+    <%= f.text_field :name, size: 40 %>
+<!-- END_HIGHLIGHT -->
+  </div>
+  <div class="field">
+    <%= f.label :address %><br />
+<!-- START_HIGHLIGHT -->
+    <%= f.text_area :address, rows: 3, cols: 40 %>
+<!-- END_HIGHLIGHT -->
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+<!-- START_HIGHLIGHT -->
+    <%= f.email_field :email, size: 40 %>
+<!-- END_HIGHLIGHT -->
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Confirm Registration' %>
+  </div>
+<% end %>

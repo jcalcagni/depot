@@ -1,0 +1,56 @@
+<!-- START:head -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verteo Biopharma Physician Portal</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<!-- END:head -->
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= image_tag("sslogo-swirl cloud sm.png") %>
+    <%= @page_title || "Verteo Biopharma Portal" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+<!-- START_HIGHLIGHT -->
+    <% if @cart %>
+      <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+         <%= render @cart %>
+      <% end %>
+   <% end %>
+<!-- END_HIGHLIGHT -->
+      <ul>
+        <li><a href="http://mavens.force.com/" target="_blank">Home</a></li>
+        <li><a href="http://http://mavens.force.com/services" target="_blank">Questions</a></li>
+        <li><a href="http://http://mavens.force.com/conversation?blog=1" target="_blank">News</a></li>
+        <li><a href="http://http://mavens.force.com/contact" target="_blank">Contact</a></li>
+      </ul>
+<!-- START_HIGHLIGHT -->
+  <% if !session[:user_id] %>
+        <ul>
+		  <li><%= link_to 'Login',  login_url   %></li>
+          <li><%= link_to 'New User Registration',  new_user_path    %></li>
+        </ul>
+       <% end %>
+  
+      <% if session[:user_id] %>
+        <ul>
+		  <li><%= link_to 'Request Samples',  store_path   %></li>
+		  <li><%= link_to 'Product Inquiry',  new_inquiry_path   %></li>
+		  <li><%= link_to 'Register for Event', display_path %></li>
+          <li><%= link_to 'Edit User Profile',  edit_user_path(session[:user_id])    %></li>
+        </ul>
+        <%= button_to 'Logout', logout_path, method: :delete   %>
+      <% end %>
+<!-- END_HIGHLIGHT -->
+	  
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

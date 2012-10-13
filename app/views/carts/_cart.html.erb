@@ -1,0 +1,17 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h2>Verteo Samples</h2>
+<table>
+    <%= render(cart.line_items) %>
+	<tr class="total_line">
+	  <td colspan="2"></td>
+	</tr>
+    
+	
+</table>
+
+<%= button_to "Complete Order", new_order_path, method: :get, :disabled => @order.present? %>
+<%= button_to 'Reset Order', @cart, method: :delete,
+    data: { confirm: 'Are you sure?' } %>

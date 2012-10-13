@@ -1,0 +1,8 @@
+<% if reg_line == @current_item %>
+<tr id="current_item">
+<% else %>
+<tr>
+<% end %>
+  <td><%= reg_line.event.title %></td>
+  <td class="item_price"></td>
+</tr>

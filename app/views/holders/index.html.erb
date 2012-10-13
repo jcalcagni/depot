@@ -1,0 +1,21 @@
+<h1>Listing holders</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @holders.each do |holder| %>
+  <tr>
+    <td><%= link_to 'Show', holder %></td>
+    <td><%= link_to 'Edit', edit_holder_path(holder) %></td>
+    <td><%= link_to 'Destroy', holder, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Holder', new_holder_path %>

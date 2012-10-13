@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+one:
+  name: dave
+  password_digest: <%= BCrypt::Password.create('secret') %>
+two:
+  name: MyString
+  password_digest: MyString
+
+one:
+  firstname: dave
+  lastname: dawson
+  username: ddawson
+  email: 123@45.com
+  licensest: MA
+  licenseno: 11111
+  specialty: Surgery
+  password_digest: 
+  salt: 
+
+two:
+  firstname: Myra
+  lastname: Scobee
+  username: mscobee
+  email: 123@45.com
+  licensest: RI
+  licenseno: 22222
+  specialty: Internal Medicine
+  password_digest: 
+  salt: 

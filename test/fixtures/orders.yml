@@ -1,0 +1,12 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Dave Thomas
+  address: MyText
+  email: dave@example.org
+
+
+two:
+  name: MyString
+  address: MyText
+  email: MyString@example.org

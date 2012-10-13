@@ -1,0 +1,20 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<h2>Event Registration</h2>
+<table>
+<% @holder.reg_lines.each do |item| %>
+
+   <tr>
+     <td><%= item.event.title %></td>
+	 <td><%= item.event.eventdate.strftime("-%m/%d/%Y") %></td>
+	 <td class="item_price"><%= item.event.eventtime.strftime("%H:%M") %></td>
+   </tr>
+
+ <% end %>
+ 
+</table>
+
+<%= button_to "Yes, This Session!", new_registration_path, method: :get %>
+<%= button_to 'No, a Different One', @holder, method: :delete,
+    data: { confirm: 'Are you sure?' } %>

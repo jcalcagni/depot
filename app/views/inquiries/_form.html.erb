@@ -1,0 +1,42 @@
+<%= form_for(@inquiry) do |f| %>
+  <% if @inquiry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@inquiry.errors.count, "error") %> prohibited this inquiry from being saved:</h2>
+
+      <ul>
+      <% @inquiry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product %><br />
+    <%= f.select :product, Inquiry::PRODUCT_INFO, prompt: 'Select a product' %>
+  </div>
+  <div class="field">
+    <%= f.label :inquiry %><br />
+    <%= f.text_area :inquiry, rows: 3, cols: 40 %>
+  </div>
+    <% if !session[:user_id] %>
+    <div>
+       <%= f.label :email, "Email" %><br />
+       <%= f.text_field :email, size: 40 %>
+	</div>
+    <% end %>
+	<% if session[:user_id] %>
+    <div>
+       <%= f.label :email, "Email" %><br />
+       <%= f.text_field :email, size: 40 %>
+	</div>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :contact_info, "Your Contact Details" %><br />
+    <%= f.text_area :contact_info, rows: 3, cols: 40 %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit Inquiry' %>
+  </div>
+<% end %>

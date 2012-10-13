@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  location: MyText
+  eventdate: 2012-10-09
+  eventtime: 2012-10-09 21:14:24
+
+two:
+  title: MyString
+  location: MyText
+  eventdate: 2012-10-09
+  eventtime: 2012-10-09 21:14:24
+
+vegas:
+  title: MyString
+  location: MyText
+  eventdate: 2012-10-09
+  eventtime: 2012-10-09 21:14:24
