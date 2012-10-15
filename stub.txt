@@ -1,0 +1,16 @@
+def retrive_email(user_id)
+  user = User.find(user_id)
+  user.email
+end
+
+
+
+def retrive_email(user_id)
+    @user = User.find(user_id)
+@user.email
+	email
+  end
+  
+  UserNotifier.created(@user).deliver
+  
+  
