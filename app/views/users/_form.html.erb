@@ -1,6 +1,6 @@
 <div class='depot_form'>
 
-<%= form_for(@user) do |f| %>
+<%= form_for @user, :html => {:multipart => true} do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> 
@@ -43,6 +43,11 @@
   <div class="field">
     <%= f.label :specialty, "Specialty" %>
     <%= f.text_field :specialty, size: 40 %>
+  </div>
+  <div class"field"
+     <%= f.label :avatar, "Picture" %>
+     <%= f.file_field :avatar %>
+	 <%= image_tag @user.avatar.to_s %> 
   </div>
   <div class="field">
    <%= f.label :password, "Password"%>

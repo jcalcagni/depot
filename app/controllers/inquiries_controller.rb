@@ -47,6 +47,7 @@ class InquiriesController < ApplicationController
 	
     respond_to do |format|
       if @inquiry.save
+	    InquiryNotifier.received(@inquiry).deliver
         format.html { redirect_to display_url, notice: 'Thank you for your inquiry. Verteo will respond shortly.' }
         format.json { render json: @inquiry, status: :created, location: @inquiry }
       else

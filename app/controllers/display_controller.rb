@@ -9,4 +9,9 @@ class DisplayController < ApplicationController
     @holder = current_holder
   end
   
+#for translation, set in drop down in corner  
+#  if params[:set_locale]
+#      redirect_to display_path(locale: params[:set_locale])
+
+  
 end

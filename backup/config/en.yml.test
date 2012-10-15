@@ -1,0 +1,38 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  layouts:
+   application:
+     title: "Verteo Physican Portal"
+     home:  "Home"
+     questions:  "Questions"
+     news:  "News"
+     contact: "Contact"
+	 
+errors:
+    template:
+      body:        "There were problems with the following fields:"
+      header:       
+        one:       "1 error prohibited this %{model} from being saved"
+        other:     "%{count} errors prohibited this %{model} from being saved"
+
+		
+
+store:
+    index:
+      title_html:  "Your Verteo Samples Catalog"
+      add_html:    "Add to Cart"
+
+
+orders:
+    new:
+      legend:       "Please Enter Your Details"
+    form:
+      name:         "Name"
+      address_html: "Address"
+      email:        "E-mail"
+      submit:       "Place Order"
+
+
+	  

@@ -1,0 +1,37 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  layouts:
+   application:
+     title: "Verteo Medico Portal"
+     home:  "Inicio"
+     questions:  "Preguntas"
+     news:  "Noticias"
+     contact: "Contacto"
+	 
+	 
+errors:
+    template:
+      body:        "Hay problemas con los siguientes campos:"
+      header:
+        one:       "1 error ha impedido que este %{model} se guarde"
+        other:     "%{count} errores han impedido que este %{model} se guarde"
+
+carts:
+    cart:
+      title:       "Carrito de la Compra"
+      empty:       "Vaciar Carrito"
+      checkout:    "Comprar"
+
+		
+orders:
+    new:
+      legend:       "Por favor, introduzca sus datos"
+    form:
+      name:         "Nombre"
+      address_html: "Direcci&oacute;n"
+      email:        "E-mail"
+      submit:       "Realizar Pedido"
+	  
+

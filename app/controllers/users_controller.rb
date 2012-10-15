@@ -28,8 +28,8 @@ class UsersController < ApplicationController
   # GET /users/new.json
   def new
     @user = User.new
-
-    respond_to do |format|
+    
+	respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @user }
     end
@@ -41,6 +41,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 	if request.post?
       if @user.update_attributes(params[:user])
+	    UserNotifier.updated(@user).deliver
         flash[:notice] = "Your details have been updated"
         redirect_to :action => :index
       end
@@ -54,7 +55,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
+	    UserNotifier.created(@user).deliver
+        format.html { redirect_to display_url, notice: "User #{@user.username} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -70,7 +72,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully updated." }
+	    UserNotifier.updated(@user).deliver
+        format.html { redirect_to display_url, notice: "User #{@user.username} was successfully updated." }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

@@ -39,4 +39,8 @@ gem 'jquery-rails'
 
 gem 'will_paginate', '~> 3.0'
 gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'carrierwave'
+#gem "engineyard", "~> 2.0.7"
+gem 'mini_magick'
+
 

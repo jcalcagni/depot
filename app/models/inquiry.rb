@@ -6,8 +6,14 @@ class Inquiry < ActiveRecord::Base
 	validates :inquiry, :contact_info, presence: true
     validates :product, inclusion: PRODUCT_INFO
 
-	validates_format_of     :e_mail,     :with => /^[A-Z0-9_.%-]+@([A-Z0-9_]+\.)+[A-Z]{2,4}$/i,
+	validates_format_of     :email,     :with => /^[A-Z0-9_.%-]+@([A-Z0-9_]+\.)+[A-Z]{2,4}$/i,
                                        :message => "must be a valid e-mail address"
-	
-	
+									   
+  def retrive_email(user)
+    @user = user
+	@user.email
+	email
+  end
+  
+
 end

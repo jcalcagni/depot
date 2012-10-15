@@ -13,12 +13,6 @@ add_event() to reg_lines controller as well
 p 203 create method like authorize to redirect user to main page (display)
 add beofre filter to product, event to redirect if user goes to url
 
-add picture to user profile
-add view user profile
-add contact information to inquiry
-?remove login for event
-
-
 
 HW1 10%
 HW2 10%

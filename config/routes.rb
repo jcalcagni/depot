@@ -49,6 +49,38 @@ Depot::Application.routes.draw do
 
   resources :inquiries
 
+  #for internationalization, need locales
+  #will change routes to match this
+  #get 'admin' => 'admin#index'
+  #controller :sessions do
+  #  get  'login' => :new
+  #  post 'login' => :create
+  #  delete 'logout' => :destroy
+  #end
+  #scope '(:locale)' do
+  #  resources :users
+  #  resources :orders
+  #  resources :line_items
+  #  resources :carts
+  #  get "store/index"
+  #  get 'store' => 'store#index'
+  # resources :store
+  # resources :products do
+  #  get :who_bought, on: :member
+  #  end
+  # get "display/index"
+  # resources :display
+  #  resources :registrations
+  #  resources :reg_lines
+  #  resources :holders
+  #  resources :events
+  #  resources :inquiries
+  #root to: 'display#index', as: 'display'
+   #end
+  #end
+    
+  
+  
   # ...
   # The priority is based upon order of creation:
   # first created -> highest priority.

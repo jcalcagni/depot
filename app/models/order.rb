@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
   
   validates :name, :address, :email, presence: true
-  validates_format_of     :e_mail,     :with => /^[A-Z0-9_.%-]+@([A-Z0-9_]+\.)+[A-Z]{2,4}$/i,
+  validates_format_of     :email,     :with => /^[A-Z0-9_.%-]+@([A-Z0-9_]+\.)+[A-Z]{2,4}$/i,
                                        :message => "must be a valid e-mail address"
 									   
    def add_line_items_from_cart(cart)
