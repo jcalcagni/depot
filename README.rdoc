@@ -1,9 +1,8 @@
 
-
 This is one of my "full blown" Rails apps.  It is actually deployed on Heroku as part of a prototype/client exercise.
 
 Main Features:
-a user can register for an event (anonymous)
+a user can register for an event (anonymously)
 a user (ideally a physician) could request samples of a product shipped to them
 a user can submit an inquiry about a product
 a user can create/update their profile
